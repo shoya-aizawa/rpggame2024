@@ -1,0 +1,33 @@
+
+@beta(english ver.)
+
+######################### #########################
+
+                      RPG GAME
+
+######################### #########################
+
+                   (全クリ後に解放)*非表示
+                   START NEW GAME
+                    CONTINUE GAME
+                       OPTION
+
+
+
+選択肢はアンダーラインで表現
+
+
+
+
+
+
+
+
+
+
+(for /f %%i in ('cmd /k prompt $e^<nul') do set ESC=%%i)
+これが必要
+echo --- スタイル ---
+echo %ESC%[0mリセット
+echo %ESC%[1m太字
+echo %ESC%[4mアンダーライン

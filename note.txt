@@ -1,0 +1,223 @@
+企画：RPG風自作ゲーム
+
+ゲーム概要：メインはテキストベースで進行する。ダンジョンやエリア、宝箱などMAPとして移動可能なコンソールを導入したい
+
+開発段階での重大な課題：
+    文字エンコードの問題(chcp 932か65001)
+    現状、黒窓上で起動する際アンダーラインが消える問題が発生
+    日本語出力の場所だけエンコードする？？
+
+構成：
+    １－１：メインタイトル画面（テキストタイトル、はじめから、つづきから、設定画面(必要かな...?)）ok
+    １－２：はじめから、の導入部分を完成させる（１－３を実装するため）ok
+    １－３：セーブデータのロードシステムok
+    
+    ２－１：チュートリアルシーケンスの作成ok
+    ２－２：戦闘システムの確立
+    ２－３：敵データの設定
+    ２－４：プレイヤーデータの調整
+    ２－５：各種装備、アイテムのデータ設定
+
+    ３－１：
+
+
+
+:Enemy_DEAD
+rem 最初に規定の敵のライフを１刈り取る
+rem 今後ソウルキラーみたいな武器で「１」の部分を変更できるもあり
+rem ここで死亡判定をする、例えば蘇生できるスキルとか、第二形態とか
+
+Enemy_Status_Slime
+:: LIFEは正の数（基本は１）である限り生きてる
+::（アンデットなど例外あり）
+:: LIFEが２以上あるのは例えば
+:: ボスの第二形態とかで減算して使う予定
+
+
+現状
+旅のしおりに導かれ集落へ向かった主人公
+オートセーブを挟みセーブデータのロードポイントの作成から
+
+めも2024/11/23
+PrologueのMAPDATA.txtについて
+"MAPDATA_Display.txt","MAPDATA"
+二つのファイルを準備 → "Northern Village"の文字を一文字ずつ出すやつやる
+→ MAPDATA_Display.txtを最初にforで読み込み、1行ずつ表示させてく(スキャンみたいな)
+Northern Village、Displayが終わったらコマンドも出現させて操作可能にする
+
+
+
+ファイルディレクトリ
+RPGGAME
+    EnemyData
+        EnemyStatusSlime.bat
+    ItemData
+        ItemData.bat
+    NewGame
+        EnterYourName.bat
+        PlayerStatus.bat
+        PlayerStatusDeveloper.bat
+        ReadyForPrologue.bat
+        TextFile.bat
+    SaveData
+        SaveDataConfig.txt
+    Sounds
+    Stories
+    Systems
+        Display
+            InventoryDisplay.txt
+            MainMenuDisplay.txt
+            SelectSaveDataDisplay.txt
+        AutoSaveSequence.bat
+        CriticalErrorBeepSounds.bat
+        DisplayAdjustSpace.bat
+        InventorySystem.bat
+        LoadSaveDataSystem_Utility.bat
+        MainMenu.bat
+        MainMenuConfig.bat
+        MainSaveSystem.bat
+        SaveData_1_Deleter.bat
+        SaveData_2_Deleter.bat
+        SaveData_3_Deleter.bat
+        SaveDataDeleteSystem.bat
+        SelectSaveData.bat
+        SelectSaveData_Initialize.bat
+ Run.bat
+ Main.bat
+
+
+
+
+起動順序
+Run
+ → Main
+     → Initialization1(CheckSaveData)
+     → Initialization2(DisplayAdjustSpace,SelectSaveData_Initialize,TextFile)
+     → MainMenu
+         → NewGame
+             → 
+         → Continue
+         → Option
+
+
+
+
+
+
+equ　等しい
+neq　等しくない
+gtr　より大きい
+geq　以上
+leq　以下
+lss　より小さい（＝未満）
+
+
+
+
+
+
+rem echo.                 Select save data
+rem echo.+-------------------------------------------------+ 0
+rem echo.| SaveData:1                                      |A1
+rem echo.|                      ENPTY                      |B1
+rem echo.|                                                 |C1
+rem echo.+-------------------------------------------------+ 1
+rem echo.| Player_Name                                     |D2
+rem echo.| Location:Northern Village                       |E2
+rem echo.| AUTO-SAVE                      Playtime - hh:mm |F2
+rem echo.+-------------------------------------------------+ 2
+rem echo.| Player_Name   Lv:XX   HP=XX   MP=XX             |G3
+rem echo.| Last Place:XXXXXX XXXXXX                        |H3
+rem echo.| MANUAL-SAVE                    Playtime - hh:mm |I3
+rem echo.+-------------------------------------------------+ 3
+
+
+
+
+
+
+
+
+
+                                                         +-------------------------------------------------------------------------------------------------+
+                                                         | < TEXT BOX >                                                                                    |
+                                                         |                                                                                                 |
+                                                         |                                                                                                 |
+                                                         |                                                                                                 |
+                                                         |                                                                                                 |
+                                                         |                                                                                                 |
+                                                         +-------------------------------------------------------------------------------------------------+
+                                                                       +             +             +             +             +             +              
+                                                                       |    (you)    |             |             |             |             |              
+                                                                       |      @      |             |             |             |             |              
+                                                                       |             |             |             |             |             |              
+                                                                       +             +             +             +             +             +              
+                                                                       |             |             |             |             |             |              
+                                                                       |             |             |             |             |             |              
+                                                                       |             |             |             |             |             |              
+                                                                       +             +             +             +             +             +              
+                                                                       |             |             |             |             |             |              
+                                                                       |             |             |             |             |             |              
+                                                                       |             |             |             |             |             |              
+                                                                       +             +             +             +             +             +              
+
+                                                         +-------------------------------------------------------------------------------------------------+
+                                                         |    < C O M M A N D >    |  < P L A Y E R  S T A T U S >                                         |
+                                                         |                         |                                                                       |
+                                                         |    ATTACK !             |                                                                       |
+                                                         |                         |                                                                       |
+                                                         |    MOVE ON !            |                                                                       |
+                                                         |                         |                                                                       |
+                                                         |    USE MAGIC            |                                                                       |
+                                                         |                         |                                                                       |
+                                                         |    USE ITEMS            |                                                                       |
+                                                         |                         |                                                                       |
+                                                         |    ESCAPE BATTLE        |                                                                       |
+                                                         +-------------------------------------------------------------------------------------------------+
+pause
+
+:TEST
+@echo off
+:: ANSIエスケープシーケンスの準備
+for /f %%i in ('cmd /k prompt $e^<nul') do set "esc=%%i"
+
+:: 各座標の値を設定 (仮)
+setlocal enabledelayedexpansion
+echo Debugging Output:
+echo -----------------
+for /l %%z in (1,1,3) do (
+    for /l %%y in (1,1,3) do (
+        for /l %%x in (1,1,5) do (
+            set "local_x=%%x"
+            set "local_y=%%y"
+            set "local_z=%%z"
+            
+            :: ローカル座標 -> グローバル座標に変換
+            call :convert_to_global !local_x! !local_y! !local_z! global_x global_y
+            
+            :: デバッグ情報を出力
+            echo Local: x=%%x, y=%%y, z=%%z --- Global: x=!global_x!, y=!global_y!
+            
+            :: 各座標に内容を表示
+            set "content=x!local_x!_y!local_y!_z!local_z!"
+            echo %esc%[!global_y!;!global_x!H!content!
+        )
+    )
+)
+echo %esc%[H
+pause >nul
+exit /b
+
+:convert_to_global
+:: ローカル座標をグローバル座標に変換する関数
+:: %1 = ローカルx, %2 = ローカルy, %3 = ローカルz
+:: 出力: %4 = グローバルx, %5 = グローバルy
+::setlocal enabledelayedexpansion
+
+:: グローバル座標計算
+set /a "global_x=73 + (%1 - 1) * 14"
+set /a "global_y=16 + (%2 - 1) * 4 + (%3 - 1)"
+
+:: 呼び出し元にグローバル座標を返す
+endlocal & set "%4=%global_x%" & set "%5=%global_y%"
+exit /b

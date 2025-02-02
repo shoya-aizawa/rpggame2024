@@ -1,0 +1,71 @@
+echo.                 Select save data
+call echo.+-------------------------------------------------+
+call echo.%ESC%[%CSD_color_1%m%P%%ESC%[0m%SaveDataText_A%%ESC%[%CSD_color_1%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_1%m%P%%ESC%[0m%SaveDataText_B%%ESC%[%CSD_color_1%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_1%m%P%%ESC%[0m%SaveDataText_C%%ESC%[%CSD_color_1%m%P%%ESC%[0m%
+call echo.+-------------------------------------------------+
+call echo.%ESC%[%CSD_color_2%m%P%%ESC%[0m%SaveDataText_D%%ESC%[%CSD_color_2%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_2%m%P%%ESC%[0m%SaveDataText_E%%ESC%[%CSD_color_2%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_2%m%P%%ESC%[0m%SaveDataText_F%%ESC%[%CSD_color_2%m%P%%ESC%[0m%
+call echo.+-------------------------------------------------+
+call echo.%ESC%[%CSD_color_3%m%P%%ESC%[0m%SaveDataText_G%%ESC%[%CSD_color_3%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_3%m%P%%ESC%[0m%SaveDataText_H%%ESC%[%CSD_color_3%m%P%%ESC%[0m%
+call echo.%ESC%[%CSD_color_3%m%P%%ESC%[0m%SaveDataText_I%%ESC%[%CSD_color_3%m%P%%ESC%[0m%
+call echo.+-------------------------------------------------+
+
+
+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.                                                           ▄████████    ▄███████▄    ▄██████▄        ▄██████▄     ▄████████    ▄▄▄▄███▄▄▄▄      ▄████████ 
+echo.                                                          ███    ███   ███    ███   ███    ███      ███    ███   ███    ███  ▄██▀▀▀███▀▀▀██▄   ███    ███ 
+echo.                                                          ███    ███   ███    ███   ███    █▀       ███    █▀    ███    ███  ███   ███   ███   ███    █▀  
+echo.                                                         ▄███▄▄▄▄██▀   ███    ███  ▄███            ▄███          ███    ███  ███   ███   ███  ▄███▄▄▄     
+echo.                                                        ▀▀███▀▀▀▀▀   ▀█████████▀  ▀▀███ ████▄     ▀▀███ ████▄  ▀███████████  ███   ███   ███ ▀▀███▀▀▀     
+echo.                                                        ▀███████████   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    █▄  
+echo.                                                          ███    ███   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    ███ 
+echo.                                                          ███    ███  ▄████▀        ████████▀       ████████▀    ███    █▀    ▀█   ███   █▀    ██████████  v0.0.0
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.
+echo.                                                                                              Select your save data
+echo.
+echo.                                                            +----------------------------------------------------------------------------------------+
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                         >  |                                                                                        |  <
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            +----------------------------------------------------------------------------------------+
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            +----------------------------------------------------------------------------------------+
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            |                                                                                        |
+echo.                                                            +----------------------------------------------------------------------------------------+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                                                                (c) 2024 RPGGAME.
+echo.                                                                                               All Rights Reserbed.

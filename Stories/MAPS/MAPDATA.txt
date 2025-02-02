@@ -1,0 +1,22 @@
+echo.
+echo.
+call echo. %ESC%[107;30m~Northern Village~%ESC%[0m
+echo.
+echo.                                            =AREA MAP=
+call echo.          ~~/%ESC%[%cursor_1%m[!]%ESC%[0m/~~                    +--------------------+
+call echo.        ~~~       ~~~                  %P% %ESC%[%cursor_1%m[!]%ESC%[0m - %ESC%[%TMU_1%mMore North%ESC%[0m   %P%
+echo.       ~~            ~~~               +--------------------+
+call echo.     ~~~   %ESC%[%cursor_2%m()%ESC%[0m          ~~              %P% %ESC%[%cursor_2%m()%ESC%[0m  - %ESC%[%TMU_2%mComposter%ESC%[0m    %P%
+call echo.    ~~      ░░░%ESC%[%cursor_3%m░░░%ESC%[0m░░      ~~           %P%  %ESC%[%cursor_3%m░%ESC%[0m  - %ESC%[%TMU_3%mField%ESC%[0m        %P%
+call echo.   ~~  %ESC%[%cursor_4%m[*]%ESC%[0m  ░░░░░░░░  %ESC%[%cursor_5%m[=]%ESC%[0m   ~          %P% %ESC%[%cursor_4%m[*]%ESC%[0m - %ESC%[%TMU_4%mHouse%ESC%[0m        %P%
+call echo.  ~~        ░░░░░░░░        ~~         %P% %ESC%[%cursor_5%m[=]%ESC%[0m - %ESC%[%TMU_5%mItem Box%ESC%[0m     %P%
+call echo.  ~~  %ESC%[%cursor_6%m[*]%ESC%[0m                   ~~         %P% %ESC%[%cursor_6%m[*]%ESC%[0m - %ESC%[%TMU_6%mHouse%ESC%[0m        %P%
+call echo.   ~~         /\       %ESC%[%cursor_7%m[*]%ESC%[0m  ~          +--------------------+
+call echo.    ~~       /%ESC%[%cursor_8%m[]%ESC%[0m\           ~~         %P% %ESC%[%cursor_7%m[*]%ESC%[0m - %ESC%[%TMU_7%mHouse%ESC%[0m        %P%
+call echo.     ~~     /    \          ~~         %P% %ESC%[%cursor_8%m[]%ESC%[0m  - %ESC%[%TMU_8%mTent%ESC%[0m         %P%
+call echo.      ~~             %ESC%[%cursor_9%m[~~]%ESC%[0m  ~~          %P% %ESC%[%cursor_9%m[~~]%ESC%[0m- %ESC%[%TMU_9%mItem Store%ESC%[0m   %P%
+echo.       ~~~               ~~~           +--------------------+
+call echo.         ~~~~        ~~~~              %P% %ESC%[%cursor_10%m[.]%ESC%[0m - %ESC%[%TMU_10%mEXIT VILLAGE%ESC%[0m %P%
+call echo.           ~~~/%ESC%[%cursor_10%m[.]%ESC%[0m/~~~~                +--------------------+
+echo.
+echo.

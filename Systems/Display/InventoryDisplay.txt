@@ -1,0 +1,25 @@
+echo.
+echo.
+echo.     +---------------------------------------------------------------------------------+
+call echo.     %P%[                   ] [           ] [             ] [               ] [         ]%P%
+call echo.     %P%[%ESC%[%Inventory_cursor_1%m E Q U I P M E N T %ESC%[0m] [%ESC%[%Inventory_cursor_2%m I T E M S %ESC%[0m] [%ESC%[%Inventory_cursor_3%m S K I L L S %ESC%[0m] [%ESC%[%Inventory_cursor_4%m S Y S T E M S %ESC%[0m] [%ESC%[%Inventory_cursor_5%m S A V E %ESC%[0m]%P%
+call echo.     %P%[                   ] [           ] [             ] [               ] [         ]%P%
+echo.     +---------------------------------------------------------------------------------+
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P%%DAA_3%Lv:%Player_LV%%DAA_Lv%%P%
+call echo.     %P%                                                     %P%%DAA_3%%Player_Name%%DAA_Name%%P%
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P%%Player_Head%%P%
+call echo.     %P%                                                     %P%%Player_Arm_1%%P%
+call echo.     %P%                                                     %P%%Player_Arm_2%%P%
+call echo.     %P%                                                     %P%%Player_Body%%P%
+call echo.     %P%                                                     %P%%Player_Leg_1%%P%
+call echo.     %P%                                                     %P%%Player_Leg_2%%P%
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P%%DAA_5%HP=%Player_HP%%DAA_HP%/%DAA_2%MP=%Player_MP%%DAA_MP%%P%
+call echo.     %P%                                                     %P%%DAA_4%ATK=%Player_ATK%%DAA_ATK%/%DAA_2%DEF=%Player_DEF%%DAA_DEF%%P%
+call echo.     %P%                                                     %P%%DAA_27%%P%
+call echo.     %P%                                                     %P% NEXT Lv EXP left:%Player_NEED_NEXT_LEVEL_EXP%%DAA_NEED_NEXT_LEVEL_EXP%%P%
+echo.     +---------------------------------------------------------------------------------+
