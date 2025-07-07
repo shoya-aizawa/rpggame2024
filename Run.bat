@@ -9,9 +9,10 @@ start /wait /max "running" Main.bat 65001
 
 
 rem デバッグ用確認
-echo Run.bat
-echo CD=%cd%
 echo ERRORLEVEL=%errorlevel%
+echo terminate Main.bat
+echo CD=%cd%
+
 pause >nul
 
 

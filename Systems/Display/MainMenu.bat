@@ -5,11 +5,6 @@ set cursor_color=7
 set cursor_index=1
 call :SetCursor %cursor_index%
 
-:Label_PressAnyKey
-    ::for /f "delims=" %%a in (%cd_systems%\Display\MainMenuDisplay.txt) do (%%a)
-    ::pause >nul
-
-
 
 :Label_MainMenu_Display
     for /f "delims=''" %%a in (%cd_systems%\Display\MainMenuDisplay.txt) do (%%a)

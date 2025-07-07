@@ -1,54 +1,183 @@
 @echo on
 if not "%1"=="65001" (call :ENCODING_ERROR)
-:Main
-    title Main
-    chcp %1 >nul
+title Main
+chcp %1 >nul
+
+:: 起動準備
+call "%cd%\Systems\InitializeModule.bat"
 
 
-:Initialize
-    call :Label_Initialize
-    if %errorlevel%==1 (exit /b 511)
-
-:CheckSaveData
-    call :Label_CheckSaveData
-
-:BootWaiting
-    @echo off
-    cls & echo.
-    echo. Initialization completed successfully.
-    echo. booting now...
-    echo.
-    timeout /t 2 /nobreak >nul
-    call :Label_StartSoundsProcess
-    goto :Label_MainMenu
+:: セーブスロット初期化・検出
+call "%cd_systems%\SaveSys\SaveDataDetectSystem.bat"
 
 
+:: 起動完了
+call "%cd_systems_display%\BootCompleteDisplay.bat"
+
+
+:: 起動サウンド(未定) 
+
+
+:: メインメニュー処理全般
+:Start_MainMenu
+    call "%cd_systems%\MainMenuModule.bat"
+    if %errorlevel%==1000 goto :Start_Continue
+    if %errorlevel%==1001 goto :Start_NewGame
+    if %errorlevel%==1002 goto :Start_Settings
+    if %errorlevel%==1099 exit 999
+::
+
+
+:: 以下よりセーブデータ選択画面に遷移
+:: コンティニュー処理
+:Start_Continue
+    call "%cd_systems%\SaveModule.bat" continue
+    if %errorlevel%==2031 (goto :Start_MainMenu)
+    if %errorlevel%==2032 (call :Start_ContinueGame 1)
+    if %errorlevel%==2033 (call :Start_ContinueGame 2)
+    if %errorlevel%==2034 (call :Start_ContinueGame 3)
+::
+
+
+:: ニューゲーム処理
+:Start_NewGame
+    call "Systems\SaveModule.bat" newgame
+    if %errorlevel%==2099 (goto :Start_MainMenu)
+    if %errorlevel%==2041 (call :Start_NewGameSession 1 CreateNew)
+    if %errorlevel%==2042 (call :Start_NewGameSession 2 CreateNew)
+    if %errorlevel%==2043 (call :Start_NewGameSession 3 CreateNew)
+    if %errorlevel%==2051 (call :Start_NewGameSession 1 Overwrite)
+    if %errorlevel%==2052 (call :Start_NewGameSession 2 Overwrite)
+    if %errorlevel%==2053 (call :Start_NewGameSession 3 Overwrite)
+::
+
+
+:: オプション処理
+    :Start_Settings
+    call "Systems\OptionModule.bat"
+    goto :Start_Settings
+::
+
+
+:: ゲームセッション開始処理
+:Start_ContinueGame
+    call :Label_IsSelectedSaveData %1
+    call :Label_LoadSaveData %1
+    call :JumpToEpisode %player_storyroute%
+::
+
+:Start_NewGameSession
+    call :Label_IsSelectedSaveData %1
+    call :Label_PlayerStatus_Initialize
+    if "%2"=="CreateNew" (
+        call :JumpToEpisode Prologue
+    ) else (
+        call :Label_OverwriteSaveAndStartNewGame %1
+        call :JumpToEpisode Prologue
+    )
 
 
 ::
-:Label_MainMenu
+:Start_Scenario
+call :JumpToEpisode %player_storyroute%
+goto :Scenario_Return
+::
 
-    cls
-    for /f "delims=" %%a in (
-        %cd_systems%\Display\MainMenuDisplayASCII_ART.txt
-    ) do (%%a)
-    pause
-    cls
 
-    set newgame=false
-    set continue=false
-    call "%cd_systems%\Display\MainMenu.bat"
-    if %errorlevel%==10 (call :Label_Continue)
-    if %errorlevel%==11 (call :Label_NewGame)
-    if %errorlevel%==12 (call :Label_Option)
-    if %errorlevel%==35 (goto :Main1)
-    if %errorlevel%==45 (goto :Main2)
-    if %errorlevel%==55 (goto :Main2)
-    if %errorlevel%==1991 (exit)
 
-    if %errorlevel%==10 (call :Label_MainMenu_SelectSaveData Continue)
-    if %errorlevel%==11 (call :Label_MainMenu_SelectSaveData NewGame)
-    if %errorlevel%==12 (call :Label_Option)
+:: ストーリー進行処理
+:JumpToEpisode
+    if "%~1"=="Prologue"       call "Stories\Prologue_Module.bat"
+    if "%~1"=="Episode_1"      call "Stories\Episode_01\EntryPoint.bat"
+    if "%~1"=="Episode_2"      call "Stories\Episode_02\EntryPoint.bat"
+    :: ...今後も増やせる
+    exit /b
+::
+
+
+:Scenario_Return
+if %errorlevel%==602 (
+    echo セーブ完了、ゲームを終了します。
+    exit /b 0
+)
+if %errorlevel%==603 (
+    echo セーブ失敗。緊急停止します。
+    exit /b 1
+)
+if %errorlevel%==604 (
+    echo プレイヤーによって中断されました。
+    exit /b 2
+)
+goto :Start_Scenario
+
+
+:Label_PlayerStatus_Initialize
+    for /f "tokens=1,2 delims='='" %%a in (
+        %cd_playerdata%\Player_Status_Initialize.txt
+    ) do (
+        set "%%a=%%b"
+    ) & rem ここではplayer_変数が初期化
+    exit /b 0
+
+:Label_OverwriteSaveAndStartNewGame
+    rem 既存のセーブデータを上書きしNewGameをスタート
+    set "selected_save=%1"
+    del "%cd_savedata%\ESD_%selected_save%.txt" >nul
+    del "%cd_savedata%\SaveData_%selected_save%.txt" >nul
+    exit /b 0
+
+
+::Utility
+:Label_IsSelectedSaveData
+    rem 今後セーブデータ容量を増やす場合forループ範囲の変更をする 現在:3
+    for /l %%i in (1,1,3) do (
+        rem selected_savedata_: どのセーブデータを選択しているかを示すフラグ (true/false)
+        if %%i==%1 (
+            set "selected_savedata_%%i=true"
+        ) else (
+            set "selected_savedata_%%i=false"
+        )
+    )
+    exit /b 0
+
+
+::Continue
+:Label_LoadSaveData
+    rem セーブデータのロード
+    for /f "tokens=1,2 delims='='" %%a in (
+        %cd_savedata%\SaveData_%1.txt
+    ) do (
+        set "%%a=%%b"
+    )
+    exit /b 0
+
+:: =======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+set newgame=false
+set continue=false
+call "%cd_systems_display%\MainMenu.bat"
+if %errorlevel%==10 (call :Label_Continue)
+if %errorlevel%==11 (call :Label_NewGame)
+if %errorlevel%==12 (call :Label_Option)
+if %errorlevel%==35 (goto :Main1)
+if %errorlevel%==45 (goto :Main2)
+if %errorlevel%==55 (goto :Main2)
+if %errorlevel%==1991 (exit)
+
+if %errorlevel%==10 (call :Label_MainMenu_SelectSaveData Continue)
+if %errorlevel%==11 (call :Label_MainMenu_SelectSaveData NewGame)
+if %errorlevel%==12 (call :Label_Option)
 ::
 :Label_MainMenu_SelectSaveData
     call "%cd_systems%\Display\MainMenu_SelectSaveData.bat" %1
@@ -213,155 +342,10 @@ if %errorlevel%==5 (goto :Label_MainMenu)
     ::exit /b 0
 
 ::NewGame
-:Label_PlayerStatus_Initialize
-    for /f "tokens=1,2 delims='='" %%a in (
-        %cd_playerdata%\Player_Status_Initialize.txt
-    ) do (
-        set "%%a=%%b"
-    ) & rem ここではplayer_変数が初期化
-    exit /b 0
 
-:Label_OverwriteSaveAndStartNewGame
-    rem 既存のセーブデータを上書きしNewGameをスタート
-    set "selected_save=%1"
-    del "%cd_savedata%\ESD_%selected_save%.txt" >nul
-    del "%cd_savedata%\SaveData_%selected_save%.txt" >nul
-    exit /b 0
 
 
-::Utility
-:Label_IsSelectedSaveData
-    rem 今後セーブデータ容量を増やす場合forループ範囲の変更をする 現在:3
-    for /l %%i in (1,1,3) do (
-        rem selected_savedata_: どのセーブデータを選択しているかを示すフラグ (true/false)
-        if %%i==%1 (
-            set "selected_savedata_%%i=true"
-        ) else (
-            set "selected_savedata_%%i=false"
-        )
-    )
-    exit /b 0
 
-
-::Continue
-:Label_LoadSaveData
-    rem セーブデータのロード
-    for /f "tokens=1,2 delims='='" %%a in (
-        %cd_savedata%\SaveData_%1.txt
-    ) do (
-        set "%%a=%%b"
-    )
-    exit /b 0
-
-
-::
-:Label_Initialize
-    rem ANSIエスケープシーケンス
-    for /f %%a in ('cmd /k prompt $e^<nul') do (set "esc=%%a")
-
-    rem ファイルパス指定変数初期化
-    set cd_enemydata=%cd%\EnemyData
-    set cd_itemdata=%cd%\ItemData
-    set cd_newgame=%cd%\NewGame
-    set cd_playerdata=%cd%\PlayerData
-    set cd_savedata=%cd%\SaveData
-    set cd_sounds=%cd%\Sounds
-    set cd_stories=%cd%\Stories
-    set cd_stories_maps=%cd%\Stories\Maps
-    set cd_systems=%cd%\Systems
-    set cd_systems_display=%cd%\Systems\Display
-
-    rem セーブ実行元の判定用変数
-    set autosave=false
-    set manualsave=false
-
-    rem GUI操作時の現在の自分の位置を決める変数
-    set newgame=false
-    set continue=false
-
-    rem GUI表示調整用の空白を格納した変数を読み込む
-    call "%cd_systems%\WhileSpaceVariable_Initialize.bat"
-
-    rem ゲーム本編で扱うテキストデータの読み込み
-    call "%cd_newgame%\TextFile.bat"
-
-    exit /b 0
-
-:Label_CheckSaveData
-    rem セーブデータの存在チェック
-    rem File_SaveDataConfig.txtからファイル名を読み込む
-    for /f "delims=" %%b in (%cd_savedata%\SaveDataConfig.txt) do (
-        call :Label_SaveDataBooleanValue %%b
-    )
-    rem セーブデータ選択画面のUIにかかわる変数の初期化
-    call "%cd_systems%\SelectSaveData_Initialize.bat"
-    exit /b 0
-
-:Label_SaveDataBooleanValue
-    if exist "%cd_savedata%\%1.txt" (
-        set %1=true
-    ) else (
-        set %1=false
-    )
-    exit /b 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-::
 :Exit
     exit
 :Label_Exit
@@ -373,9 +357,9 @@ if %errorlevel%==5 (goto :Label_MainMenu)
 ::
 ::*******************************************************************************************************
 :ENCODING_ERROR
-    @echo off
-    chcp 65001
-    COLOR 1f
+    @ECHO OFF
+    CHCP 65001
+    COLOR 1F
     CLS
     ECHO.
     ECHO.

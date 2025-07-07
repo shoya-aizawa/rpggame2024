@@ -3,7 +3,7 @@
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-if "%ESD_1%"=="true" (
+if "%saveexists_ESD_1%"=="true" (
     rem ESD_1をロードして変数を読み込む(今はここでロードするけど最適化に向けてINDEXでロード挟むでもいいかもね)
     rem Player_Naneとかも読み込んで表示するために
     rem 文字数取得してセーブデータ選択画面用にDAAをセットしたい
@@ -75,7 +75,7 @@ if "%ESD_1%"=="true" (
     call set SaveDataText_B=%while_space_1%Location:xxxxxx xxxxxx%while_space_24%
     call set SaveDataText_C=%while_space_1%AUTO-SAVE%while_space_22%Playtime - hh:mm%while_space_1%
 )
-if "%ESD_1%"=="false" (
+if "%saveexists_ESD_1%"=="false" (
     call set SaveDataText_A=%while_space_1%SaveData:1%while_space_38%
     call set SaveDataText_B=%while_space_22%ENPTY%while_space_22%
     call set SaveDataText_C=%while_space_49%
@@ -84,7 +84,7 @@ if "%ESD_1%"=="false" (
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-if "%ESD_2%"=="true" (
+if "%saveexists_ESD_2%"=="true" (
     for /f "delims=" %%a in (SaveData_2.txt) do (%%a)
 
     rem 他のセーブデータの変数との干渉対策
@@ -153,7 +153,7 @@ if "%ESD_2%"=="true" (
     call set SaveDataText_E=%DAA_1%Location:xxxxxx xxxxxx%DAA_24%
     call set SaveDataText_F=%DAA_1%AUTO-SAVE%DAA_22%Playtime - hh:mm%DAA_1%
 )
-if "%ESD_2%"=="false" (
+if "%saveexists_ESD_2%"=="false" (
     call set SaveDataText_D=%while_space_1%SaveData:2%while_space_38%
     call set SaveDataText_E=%while_space_22%ENPTY%while_space_22%
     call set SaveDataText_F=%while_space_49%
@@ -162,7 +162,7 @@ if "%ESD_2%"=="false" (
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-if "%ESD_3%"=="true" (
+if "%saveexists_ESD_3%"=="true" (
     for /f "delims=" %%a in (SaveData_3.txt) do (%%a)
 
     rem 他のセーブデータの変数との干渉対策
@@ -231,7 +231,7 @@ if "%ESD_3%"=="true" (
     call set SaveDataText_H=%DAA_1%Location:xxxxxx xxxxxx%DAA_24%
     call set SaveDataText_I=%DAA_1%AUTO-SAVE%DAA_22%Playtime - hh:mm%DAA_1%
 )
-if "%ESD_3%"=="false" (
+if "%saveexists_ESD_3%"=="false" (
     call set SaveDataText_G=%while_space_1%SaveData:3%while_space_38%
     call set SaveDataText_H=%while_space_22%ENPTY%while_space_22%
     call set SaveDataText_I=%while_space_49%
