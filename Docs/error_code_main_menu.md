@@ -19,8 +19,8 @@
 
 | エラーコード | 意味                     | 実行後ジャンプ先例       | 補足                              |
 |--------------|--------------------------|----------------------------|-----------------------------------|
-| `1000`       | Continue（続きから）     | `:Start_Continue`          | セーブデータ選択UIへ              |
-| `1001`       | New Game（はじめから）   | `:Start_NewGame`           | セーブスロット選択画面へ         |
+| `1000`       | New Game（はじめから）   | `:Start_NewGame`           | セーブスロット選択画面へ         |
+| `1001`       | Continue（続きから）     | `:Start_Continue`          | セーブデータ選択UIへ              |
 | `1002`       | Option（オプション）     | `:Label_Option`            | 未実装でもOK                      |
 | `1099`       | Exit（ゲーム終了）       | `exit /b`                  | タイトルから直接終了             |
 
@@ -31,20 +31,59 @@
 | エラーコード | 意味                             | 実行後ジャンプ先例     | 備考                    |
 |--------------|----------------------------------|------------------------|-------------------------|
 | `2031`       | キャンセルして戻る               | `:Label_MainMenu`      | `Q`キーでのキャンセル    |
-| `2032`       | SaveData1 から続きプレイ         | `:ContinueGame 1`      |                         |
-| `2033`       | SaveData2 から続きプレイ         | `:ContinueGame 2`      |                         |
-| `2034`       | SaveData3 から続きプレイ         | `:ContinueGame 3`      |                         |
+| `2032`       | SaveData1 から続きプレイ         | `:ContinueGame 1`      | **現在実装済み**        |
+| `2033`       | SaveData2 から続きプレイ         | `:ContinueGame 2`      | **現在実装済み**        |
+| `2034`       | SaveData3 から続きプレイ         | `:ContinueGame 3`      | **現在実装済み**        |
+| `2035`       | SaveData4 から続きプレイ         | `:ContinueGame 4`      | *拡張予定*             |
+| `2036`       | SaveData5 から続きプレイ         | `:ContinueGame 5`      | *拡張予定*             |
+| `2037`       | SaveData6 から続きプレイ         | `:ContinueGame 6`      | *拡張予定*             |
+| `2038`       | SaveData7 から続きプレイ         | `:ContinueGame 7`      | *拡張予定*             |
+| `2039`       | SaveData8 から続きプレイ         | `:ContinueGame 8`      | *拡張予定*             |
+| `2040`       | SaveData9 から続きプレイ         | `:ContinueGame 9`      | *拡張予定*             |
+| `2041`       | SaveData10 から続きプレイ        | `:ContinueGame 10`     | *拡張予定*             |
+| `2042`       | SaveData11 から続きプレイ        | `:ContinueGame 11`     | *拡張予定*             |
+| `2043`       | SaveData12 から続きプレイ        | `:ContinueGame 12`     | *拡張予定*             |
 
 #### NEW GAMEモードの返り値
 
+##### 空きスロットへの新規作成
+
 | エラーコード | 意味                             | 実行後ジャンプ先例        | 備考                        |
 |--------------|----------------------------------|---------------------------|-----------------------------|
-| `2041`       | SaveData1 に新規作成             | `:StartNewGame 1 Create`  | 空きスロット                |
-| `2042`       | SaveData2 に新規作成             | `:StartNewGame 2 Create`  |                             |
-| `2043`       | SaveData3 に新規作成             | `:StartNewGame 3 Create`  |                             |
-| `2051`       | SaveData1 を上書きして新規作成   | `:StartNewGame 1 Overwrite` | セーブデータ上書き確認済 |
-| `2052`       | SaveData2 を上書きして新規作成   | `:StartNewGame 2 Overwrite` |                             |
-| `2053`       | SaveData3 を上書きして新規作成   | `:StartNewGame 3 Overwrite` |                             |
+| `2051`       | SaveData1 に新規作成             | `:StartNewGame 1 Create`  | **現在実装予定**            |
+| `2052`       | SaveData2 に新規作成             | `:StartNewGame 2 Create`  | **現在実装予定**            |
+| `2053`       | SaveData3 に新規作成             | `:StartNewGame 3 Create`  | **現在実装予定**            |
+| `2054`       | SaveData4 に新規作成             | `:StartNewGame 4 Create`  | *拡張予定*                 |
+| `2055`       | SaveData5 に新規作成             | `:StartNewGame 5 Create`  | *拡張予定*                 |
+| `2056`       | SaveData6 に新規作成             | `:StartNewGame 6 Create`  | *拡張予定*                 |
+| `2057`       | SaveData7 に新規作成             | `:StartNewGame 7 Create`  | *拡張予定*                 |
+| `2058`       | SaveData8 に新規作成             | `:StartNewGame 8 Create`  | *拡張予定*                 |
+| `2059`       | SaveData9 に新規作成             | `:StartNewGame 9 Create`  | *拡張予定*                 |
+| `2060`       | SaveData10 に新規作成            | `:StartNewGame 10 Create` | *拡張予定*                 |
+| `2061`       | SaveData11 に新規作成            | `:StartNewGame 11 Create` | *拡張予定*                 |
+| `2062`       | SaveData12 に新規作成            | `:StartNewGame 12 Create` | *拡張予定*                 |
+
+##### 既存データへの上書き作成
+
+| エラーコード | 意味                             | 実行後ジャンプ先例        | 備考                        |
+|--------------|----------------------------------|---------------------------|-----------------------------|
+| `2071`       | SaveData1 を上書きして新規作成   | `:StartNewGame 1 Overwrite` | セーブデータ上書き確認済 |
+| `2072`       | SaveData2 を上書きして新規作成   | `:StartNewGame 2 Overwrite` | セーブデータ上書き確認済 |
+| `2073`       | SaveData3 を上書きして新規作成   | `:StartNewGame 3 Overwrite` | セーブデータ上書き確認済 |
+| `2074`       | SaveData4 を上書きして新規作成   | `:StartNewGame 4 Overwrite` | *拡張予定*               |
+| `2075`       | SaveData5 を上書きして新規作成   | `:StartNewGame 5 Overwrite` | *拡張予定*               |
+| `2076`       | SaveData6 を上書きして新規作成   | `:StartNewGame 6 Overwrite` | *拡張予定*               |
+| `2077`       | SaveData7 を上書きして新規作成   | `:StartNewGame 7 Overwrite` | *拡張予定*               |
+| `2078`       | SaveData8 を上書きして新規作成   | `:StartNewGame 8 Overwrite` | *拡張予定*               |
+| `2079`       | SaveData9 を上書きして新規作成   | `:StartNewGame 9 Overwrite` | *拡張予定*               |
+| `2080`       | SaveData10 を上書きして新規作成  | `:StartNewGame 10 Overwrite`| *拡張予定*               |
+| `2081`       | SaveData11 を上書きして新規作成  | `:StartNewGame 11 Overwrite`| *拡張予定*               |
+| `2082`       | SaveData12 を上書きして新規作成  | `:StartNewGame 12 Overwrite`| *拡張予定*               |
+
+##### システム制御
+
+| エラーコード | 意味                             | 実行後ジャンプ先例        | 備考                        |
+|--------------|----------------------------------|---------------------------|-----------------------------|
 | `2099`       | キャンセルして戻る               | `:Label_MainMenu`          | `Q`キーなど                |
 
 ---
@@ -59,55 +98,84 @@
 
 ---
 
-## 🎯 推奨ジャンプ処理テンプレ
+## 💡 「今後あれば便利」な追加エラーコード提案
 
-```batch
-call "%cd_systems%\Display\MainMenu.bat"
-if %errorlevel%==1000 goto :Start_Continue
-if %errorlevel%==1001 goto :Start_NewGame
-if %errorlevel%==1002 goto :Label_Option
-if %errorlevel%==1099 exit /b
+### ◼ MainMenuモジュール拡張案（1000台）
 
-call "%cd_systems%\SaveSys\SaveDataModule.bat" %1
-if %errorlevel%==2031 goto :Label_MainMenu
-if %errorlevel%==2032 call :ContinueGame 1
-if %errorlevel%==2033 call :ContinueGame 2
-if %errorlevel%==2034 call :ContinueGame 3
+| エラーコード | 想定機能                     | 実行後ジャンプ先例       | 想定される場面・用途                 |
+|--------------|------------------------------|--------------------------|-------------------------------------|
+| `1003`       | Load Game（ロード）         | `:Start_LoadGame`        | CONTINUEとは別のクイックロード機能   |
+| `1004`       | Save Game（セーブ）         | `:Start_SaveGame`        | ゲーム中断時の緊急セーブ機能         |
+| `1005`       | Settings（設定）            | `:Start_Settings`        | 音量・グラフィック設定など           |
+| `1006`       | Key Config（キー設定）       | `:Start_KeyConfig`       | キーバインド変更機能                |
+| `1007`       | Credits（クレジット）        | `:Start_Credits`         | 制作者・協力者情報表示              |
+| `1008`       | Help（ヘルプ）              | `:Start_Help`            | ゲーム操作説明・FAQ                 |
+| `1009`       | Achievement（実績）         | `:Start_Achievement`     | 達成度・トロフィー確認              |
+| `1010`       | Debug Menu（デバッグ）       | `:Start_DebugMenu`       | 開発者向けテスト機能（隠しコマンド） |
+| `1011`       | Quick Start（クイック開始）  | `:Start_QuickGame`       | 最後にプレイしたセーブデータで即開始 |
+| `1012`       | Gallery（ギャラリー）        | `:Start_Gallery`         | 獲得した画像・音楽鑑賞機能           |
+| `1013`       | Statistics（統計）          | `:Start_Statistics`      | プレイ時間・戦績などの統計情報       |
+| `1014`       | Update Check（更新確認）     | `:Start_UpdateCheck`     | ゲームアップデート確認機能           |
+| `1015`       | Backup（バックアップ）       | `:Start_Backup`          | セーブデータのバックアップ作成       |
 
-if %errorlevel%==2041 call :StartNewGame 1 CreateNew
-if %errorlevel%==2042 call :StartNewGame 2 CreateNew
-if %errorlevel%==2043 call :StartNewGame 3 CreateNew
+### ◼ SaveDataモジュール拡張案（2000台）
 
-if %errorlevel%==2051 call :StartNewGame 1 Overwrite
-if %errorlevel%==2052 call :StartNewGame 2 Overwrite
-if %errorlevel%==2053 call :StartNewGame 3 Overwrite
+#### セーブデータ管理機能
 
-if %errorlevel%==2099 goto :Label_MainMenu
-```
+| エラーコード | 想定機能                     | 実行後ジャンプ先例       | 想定される場面・用途                 |
+|--------------|------------------------------|--------------------------|-------------------------------------|
+| `2001`       | セーブデータ詳細表示         | `:ShowSaveDetail`        | プレイ時間・進行度・レベルなど詳細   |
+| `2002`       | セーブデータ削除確認         | `:DeleteSaveData`        | 不要なセーブデータの削除機能         |
+| `2003`       | セーブデータコピー           | `:CopySaveData`          | セーブデータの複製作成              |
+| `2004`       | セーブデータ移動             | `:MoveSaveData`          | セーブスロット間でのデータ移動       |
+| `2005`       | セーブデータ名前変更         | `:RenameSaveData`        | セーブデータにカスタム名前を付与     |
+| `2006`       | セーブデータ並び替え         | `:SortSaveData`          | 作成日時・プレイ時間などで並び替え   |
+| `2007`       | セーブデータインポート       | `:ImportSaveData`        | 外部からのセーブデータ取り込み       |
+| `2008`       | セーブデータエクスポート     | `:ExportSaveData`        | セーブデータの外部出力機能           |
+| `2009`       | セーブデータ復元             | `:RestoreSaveData`       | 削除したセーブデータの復元機能       |
+| `2010`       | セーブデータ暗号化           | `:EncryptSaveData`       | セーブデータの暗号化・保護機能       |
+
+#### UI・操作性向上
+
+| エラーコード | 想定機能                     | 実行後ジャンプ先例       | 想定される場面・用途                 |
+|--------------|------------------------------|--------------------------|-------------------------------------|
+| `2011`       | プレビュー表示切替           | `:TogglePreview`         | セーブデータのスクリーンショット表示 |
+| `2012`       | 表示形式切替                 | `:ToggleDisplayMode`     | リスト表示・グリッド表示などの切替   |
+| `2013`       | フィルター機能               | `:FilterSaveData`        | 完了・未完了などの条件絞り込み       |
+| `2014`       | 検索機能                     | `:SearchSaveData`        | セーブデータ名・プレイヤー名で検索   |
+| `2015`       | ショートカット実行           | `:ExecuteShortcut`       | 数字キー・F1-F12での直接選択        |
+| `2016`       | 最近使用したデータ表示       | `:ShowRecentSaves`       | 最近プレイしたセーブデータを優先表示 |
+| `2017`       | お気に入り登録               | `:AddToFavorites`        | よく使うセーブデータをお気に入り登録 |
+| `2018`       | クイックアクセス             | `:QuickAccess`           | 特定のセーブデータへの高速アクセス   |
+
+#### 高度な機能
+
+| エラーコード | 想定機能                     | 実行後ジャンプ先例       | 想定される場面・用途                 |
+|--------------|------------------------------|--------------------------|-------------------------------------|
+| `2020`       | 難易度変更                   | `:ChangeDifficulty`      | 続きから開始時の難易度変更機能       |
+| `2021`       | チャプター選択               | `:SelectChapter`         | 特定のストーリー地点から開始         |
+| `2022`       | キャラクター選択             | `:SelectCharacter`       | 主人公・仲間キャラクターの選択       |
+| `2023`       | モード選択                   | `:SelectGameMode`        | ストーリー・フリープレイなどの選択   |
+| `2024`       | 実績確認                     | `:ViewAchievements`      | そのセーブデータでの実績確認         |
+| `2025`       | 統計情報表示                 | `:ShowStatistics`        | プレイ時間・戦績などの統計           |
+| `2026`       | スクリーンショット表示       | `:ShowScreenshot`        | セーブ時点のゲーム画面表示           |
+| `2027`       | オートセーブ設定             | `:ConfigAutoSave`        | 自動セーブ機能の設定変更             |
+| `2028`       | クラウドセーブ連携           | `:CloudSaveSync`         | オンラインストレージとの同期         |
+| `2029`       | セーブデータ最適化           | `:OptimizeSaveData`      | セーブデータの容量最適化処理         |
+
+### ◼ 緊急時・エラー処理用コード
+
+| エラーコード | 想定機能                     | 実行後ジャンプ先例       | 想定される場面・用途                 |
+|--------------|------------------------------|--------------------------|-------------------------------------|
+| `2090`       | セーブデータ破損検出         | `:HandleCorruptedSave`   | 破損したセーブデータの処理           |
+| `2091`       | セーブデータ修復             | `:RepairSaveData`        | 軽度の破損セーブデータの自動修復     |
+| `2092`       | バックアップから復元         | `:RestoreFromBackup`     | バックアップからの緊急復元           |
+| `2093`       | 容量不足エラー               | `:HandleDiskFull`        | ディスク容量不足時の処理             |
+| `2094`       | 権限エラー                   | `:HandlePermissionError` | ファイル書き込み権限エラー処理       |
+| `2095`       | ネットワークエラー           | `:HandleNetworkError`    | クラウドセーブ時のネットワーク障害   |
+| `2096`       | 互換性エラー                 | `:HandleCompatError`     | 古いバージョンのセーブデータ処理     |
+| `2097`       | 緊急セーブ                   | `:EmergencySave`         | 予期しない終了前の緊急セーブ実行     |
+| `2098`       | セーフモード起動             | `:StartSafeMode`         | 問題発生時の安全なモードで起動       |
 
 ---
-
-## 💬 命名ルール
-
-- **先頭1桁（1xxx）**: MainMenuの返り値
-- **先頭2桁（20xx）**: SaveDataModuleの返り値（MainMenuの一部として管理）
-- **下2桁（xx00〜xx99）**: 個別アクション識別子
-- **特別コード `x099`** は「戻る・キャンセル・終了」に使うこと
-
----
-
-## 🧩 その他
-
-- この設計書に基づいて `Display\MainMenu.bat` や `SaveSys\SaveDataModule.bat` 側でも `exit /b xxxx` のように **責任を持って返り値を明示すること**
-- エラーコードの衝突を避けるため、**番号のセグメント分割（1000台 / 2000台）を厳守すること**
-
----
-
-## 📁 保存場所案
-
-```
-ProjectRoot/
-└── Docs/
-    └── ErrorCode_MainMenu.md
-```
 

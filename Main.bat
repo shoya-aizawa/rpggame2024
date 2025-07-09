@@ -2,6 +2,7 @@
 if not "%1"=="65001" (call :ENCODING_ERROR)
 title Main
 chcp %1 >nul
+reg add HKEY_CURRENT_USER\Console /v VirtualTerminalLevel /t REG_DWORD /d 1 /f >nul 2>&1
 
 :: 起動準備
 call "%cd%\Systems\InitializeModule.bat"
@@ -18,30 +19,32 @@ call "%cd_systems_display%\BootCompleteDisplay.bat"
 :: 起動サウンド(未定) 
 
 
-:: メインメニュー処理全般
+:: メインメニュー処理
 :Start_MainMenu
     call "%cd_systems%\MainMenuModule.bat"
-    if %errorlevel%==1000 goto :Start_Continue
-    if %errorlevel%==1001 goto :Start_NewGame
+    if %errorlevel%==1000 goto :Start_NewGame
+    if %errorlevel%==1001 goto :Start_Continue
     if %errorlevel%==1002 goto :Start_Settings
     if %errorlevel%==1099 exit 999
 ::
 
 
-:: 以下よりセーブデータ選択画面に遷移
+:: セーブデータ選択画面に遷移
 :: コンティニュー処理
 :Start_Continue
-    call "%cd_systems%\SaveModule.bat" continue
+    call "%cd_systems_savesys%\SaveDataSelector.bat" CONTINUE
     if %errorlevel%==2031 (goto :Start_MainMenu)
     if %errorlevel%==2032 (call :Start_ContinueGame 1)
     if %errorlevel%==2033 (call :Start_ContinueGame 2)
     if %errorlevel%==2034 (call :Start_ContinueGame 3)
-::
+:: 拡張予定
+::  if %errorlevel%==2035 (call :Start_ContinueGame 4)
+::  ...
 
 
 :: ニューゲーム処理
 :Start_NewGame
-    call "Systems\SaveModule.bat" newgame
+    call "%cd_systems_savesys%\SaveDataSelector.bat" NEWGAME
     if %errorlevel%==2099 (goto :Start_MainMenu)
     if %errorlevel%==2041 (call :Start_NewGameSession 1 CreateNew)
     if %errorlevel%==2042 (call :Start_NewGameSession 2 CreateNew)
@@ -54,6 +57,8 @@ call "%cd_systems_display%\BootCompleteDisplay.bat"
 
 :: オプション処理
     :Start_Settings
+    echo オプションメニューを開きます。
+    pause
     call "Systems\OptionModule.bat"
     goto :Start_Settings
 ::

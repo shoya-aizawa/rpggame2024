@@ -1,5 +1,3 @@
-cls
-echo.
 echo.
 echo.
 echo.
@@ -10,9 +8,9 @@ echo.
 echo.                                                           ▄████████    ▄███████▄    ▄██████▄        ▄██████▄     ▄████████    ▄▄▄▄███▄▄▄▄      ▄████████ 
 echo.                                                          ███    ███   ███    ███   ███    ███      ███    ███   ███    ███  ▄██▀▀▀███▀▀▀██▄   ███    ███ 
 echo.                                                          ███    ███   ███    ███   ███    █▀       ███    █▀    ███    ███  ███   ███   ███   ███    █▀  
-echo.                                                         ▄███▄▄▄▄██▀   ███    ███  ▄███            ▄███          ███    ███  ███   ███   ███  ▄███▄▄▄     
-echo.                                                        ▀▀███▀▀▀▀▀   ▀█████████▀  ▀▀███ ████▄     ▀▀███ ████▄  ▀███████████  ███   ███   ███ ▀▀███▀▀▀     
-echo.                                                        ▀███████████   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    █▄  
+echo.                                                          ███▄▄▄▄██▀   ███    ███   ███             ███          ███    ███  ███   ███   ███   ███▄▄▄     
+echo.                                                          ███▀▀▀▀▀     █████████▀   ███ ████▄       ███ ████▄    ██████████  ███   ███   ███   ███▀▀▀     
+echo.                                                          █████████    ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    █▄  
 echo.                                                          ███    ███   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    ███ 
 echo.                                                          ███    ███  ▄████▀        ████████▀       ████████▀    ███    █▀    ▀█   ███   █▀    ██████████  v0.0.0
 echo.
@@ -35,21 +33,21 @@ echo.
 echo.
 echo.                                                                                              +--------------------+
 echo.                                                                                              |                    |
-call echo.                                                                                              %p%%esc%[%select_cursor_1%m      Continue      %esc%[0m%p%
+call echo.                                                                                              %p%%esc%[%menu_1_color%m      New Game      %esc%[0m%p%
 echo.                                                                                              |                    |
-call echo.                                                                                              %p%%esc%[%select_cursor_2%m      New Game      %esc%[0m%p%
+call echo.                                                                                              %p%%esc%[%menu_2_color%m      Continue      %esc%[0m%p%
 echo.                                                                                              |                    |
 echo.                                                                                              |  ----------------  |
 echo.                                                                                              |                    |
-call echo.                                                                                              %p%%esc%[%select_cursor_3%m      Settings      %esc%[0m%p%
+call echo.                                                                                              %p%%esc%[%menu_3_color%m      Settings      %esc%[0m%p%
 echo.                                                                                              |                    |
-call echo.                                                                                              %p%%esc%[%select_cursor_4%m        Quit        %esc%[0m%p%
+call echo.                                                                                              %p%%esc%[%menu_4_color%m        Quit        %esc%[0m%p%
 echo.                                                                                              |                    |
 echo.                                                                                              +--------------------+
 echo.
 echo.
-echo.
+call echo.                                                                                               %esc%[93m W/S: 選択  F: 決定 %esc%[0m
 echo.
 echo.
 echo.                                                                                                (c) 2024 RPGGAME.
-echo.                                                                                               All Rights Reserbed.
+echo.                                                                                               All Rights Reserved.

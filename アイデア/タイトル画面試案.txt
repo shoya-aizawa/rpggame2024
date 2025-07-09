@@ -1,0 +1,120 @@
+
+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.                                                           ▄████████    ▄███████▄    ▄██████▄        ▄██████▄     ▄████████    ▄▄▄▄███▄▄▄▄      ▄████████ 
+echo.                                                          ███    ███   ███    ███   ███    ███      ███    ███   ███    ███  ▄██▀▀▀███▀▀▀██▄   ███    ███ 
+echo.                                                          ███    ███   ███    ███   ███    █▀       ███    █▀    ███    ███  ███   ███   ███   ███    █▀  
+echo.                                                         ▄███▄▄▄▄██▀   ███    ███  ▄███            ▄███          ███    ███  ███   ███   ███  ▄███▄▄▄     
+echo.                                                        ▀▀███▀▀▀▀▀   ▀█████████▀  ▀▀███ ████▄     ▀▀███ ████▄  ▀███████████  ███   ███   ███ ▀▀███▀▀▀     
+echo.                                                        ▀███████████   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    █▄  
+echo.                                                          ███    ███   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    ███ 
+echo.                                                          ███    ███  ▄████▀        ████████▀       ████████▀    ███    █▀    ▀█   ███   █▀    ██████████  v0.0.0
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.
+echo.                                                                                              Select your save data
+echo.
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.                                                      |[1]                 |     |[2]                 |     |[3]                 |     |[4]                 |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.                                                      |[5]                 |     |[6]                 |     |[7]                 |     |[8]                 |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.                                                      |[9]                 |     |[10]                |     |[11]                |     |[12]                |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      |                    |     |                    |     |                    |     |                    |
+echo.                                                      +--------------------+     +--------------------+     +--------------------+     +--------------------+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                                                                (c) 2024 Rslot_border_charGGAME.
+echo.                                                                                               All Rights Reserved.
+
+変数置き換えver
+
+
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.                                                           ▄████████    ▄███████▄    ▄██████▄        ▄██████▄     ▄████████    ▄▄▄▄███▄▄▄▄      ▄████████ 
+echo.                                                          ███    ███   ███    ███   ███    ███      ███    ███   ███    ███  ▄██▀▀▀███▀▀▀██▄   ███    ███ 
+echo.                                                          ███    ███   ███    ███   ███    █▀       ███    █▀    ███    ███  ███   ███   ███   ███    █▀  
+echo.                                                         ▄███▄▄▄▄██▀   ███    ███  ▄███            ▄███          ███    ███  ███   ███   ███  ▄███▄▄▄     
+echo.                                                        ▀▀███▀▀▀▀▀   ▀█████████▀  ▀▀███ ████▄     ▀▀███ ████▄  ▀███████████  ███   ███   ███ ▀▀███▀▀▀     
+echo.                                                        ▀███████████   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    █▄  
+echo.                                                          ███    ███   ███          ███    ███      ███    ███   ███    ███  ███   ███   ███   ███    ███ 
+echo.                                                          ███    ███  ▄████▀        ████████▀       ████████▀    ███    █▀    ▀█   ███   █▀    ██████████  v0.0.0
+echo.
+echo.                                                      ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+echo.
+echo.
+echo.                                                                                              Select your save data
+echo.
+echo.                                                      %esc%[%slot_1_color%m+--------------------+%esc%[0m     %esc%[%slot_2_color%m+--------------------+%esc%[0m     %esc%[%slot_3_color%m+--------------------+%esc%[0m     %esc%[%slot_4_color%m+--------------------+%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%[1]                 %p%%esc%[0m     %esc%[%slot_2_color%m%p%[2]                 %p%%esc%[0m     %esc%[%slot_3_color%m%p%[3]                 %p%%esc%[0m     %esc%[%slot_4_color%m%p%[4]                 %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%                    %p%%esc%[0m     %esc%[%slot_2_color%m%p%                    %p%%esc%[0m     %esc%[%slot_3_color%m%p%                    %p%%esc%[0m     %esc%[%slot_4_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%                    %p%%esc%[0m     %esc%[%slot_2_color%m%p%                    %p%%esc%[0m     %esc%[%slot_3_color%m%p%                    %p%%esc%[0m     %esc%[%slot_4_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%                    %p%%esc%[0m     %esc%[%slot_2_color%m%p%                    %p%%esc%[0m     %esc%[%slot_3_color%m%p%                    %p%%esc%[0m     %esc%[%slot_4_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%                    %p%%esc%[0m     %esc%[%slot_2_color%m%p%                    %p%%esc%[0m     %esc%[%slot_3_color%m%p%                    %p%%esc%[0m     %esc%[%slot_4_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m%p%                    %p%%esc%[0m     %esc%[%slot_2_color%m%p%                    %p%%esc%[0m     %esc%[%slot_3_color%m%p%                    %p%%esc%[0m     %esc%[%slot_4_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_1_color%m+--------------------+%esc%[0m     %esc%[%slot_2_color%m+--------------------+%esc%[0m     %esc%[%slot_3_color%m+--------------------+%esc%[0m     %esc%[%slot_4_color%m+--------------------+%esc%[0m
+echo.
+echo.                                                      %esc%[%slot_5_color%m+--------------------+%esc%[0m     %esc%[%slot_6_color%m+--------------------+%esc%[0m     %esc%[%slot_7_color%m+--------------------+%esc%[0m     %esc%[%slot_8_color%m+--------------------+%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%[5]                 %p%%esc%[0m     %esc%[%slot_6_color%m%p%[6]                 %p%%esc%[0m     %esc%[%slot_7_color%m%p%[7]                 %p%%esc%[0m     %esc%[%slot_8_color%m%p%[8]                 %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%                    %p%%esc%[0m     %esc%[%slot_6_color%m%p%                    %p%%esc%[0m     %esc%[%slot_7_color%m%p%                    %p%%esc%[0m     %esc%[%slot_8_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%                    %p%%esc%[0m     %esc%[%slot_6_color%m%p%                    %p%%esc%[0m     %esc%[%slot_7_color%m%p%                    %p%%esc%[0m     %esc%[%slot_8_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%                    %p%%esc%[0m     %esc%[%slot_6_color%m%p%                    %p%%esc%[0m     %esc%[%slot_7_color%m%p%                    %p%%esc%[0m     %esc%[%slot_8_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%                    %p%%esc%[0m     %esc%[%slot_6_color%m%p%                    %p%%esc%[0m     %esc%[%slot_7_color%m%p%                    %p%%esc%[0m     %esc%[%slot_8_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m%p%                    %p%%esc%[0m     %esc%[%slot_6_color%m%p%                    %p%%esc%[0m     %esc%[%slot_7_color%m%p%                    %p%%esc%[0m     %esc%[%slot_8_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_5_color%m+--------------------+%esc%[0m     %esc%[%slot_6_color%m+--------------------+%esc%[0m     %esc%[%slot_7_color%m+--------------------+%esc%[0m     %esc%[%slot_8_color%m+--------------------+%esc%[0m
+echo.
+echo.                                                      %esc%[%slot_9_color%m+--------------------+%esc%[0m     %esc%[%slot_10_color%m+--------------------+%esc%[0m     %esc%[%slot_11_color%m+--------------------+%esc%[0m     %esc%[%slot_12_color%m+--------------------+%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%[9]                 %p%%esc%[0m     %esc%[%slot_10_color%m%p%[10]                %p%%esc%[0m     %esc%[%slot_11_color%m%p%[11]                %p%%esc%[0m     %esc%[%slot_12_color%m%p%[12]                %p%%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%                    %p%%esc%[0m     %esc%[%slot_10_color%m%p%                    %p%%esc%[0m     %esc%[%slot_11_color%m%p%                    %p%%esc%[0m     %esc%[%slot_12_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%                    %p%%esc%[0m     %esc%[%slot_10_color%m%p%                    %p%%esc%[0m     %esc%[%slot_11_color%m%p%                    %p%%esc%[0m     %esc%[%slot_12_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%                    %p%%esc%[0m     %esc%[%slot_10_color%m%p%                    %p%%esc%[0m     %esc%[%slot_11_color%m%p%                    %p%%esc%[0m     %esc%[%slot_12_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%                    %p%%esc%[0m     %esc%[%slot_10_color%m%p%                    %p%%esc%[0m     %esc%[%slot_11_color%m%p%                    %p%%esc%[0m     %esc%[%slot_12_color%m%p%                    %p%%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m%p%                    %p%%esc%[0m     %esc%[%slot_10_color%m%p%                    %p%%esc%[0m     %esc%[%slot_11_color%m%p%                    %p%%esc%[0m     %esc%[%slot_12_color%m%p%                    |%esc%[0m
+echo.                                                      %esc%[%slot_9_color%m+--------------------+%esc%[0m     %esc%[%slot_10_color%m+--------------------+%esc%[0m     %esc%[%slot_11_color%m+--------------------+%esc%[0m     %esc%[%slot_12_color%m+--------------------+%esc%[0m
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.                                                                                                (c) 2024 RPGGAME.
+echo.                                                                                               All Rights Reserved.
+
+
+
+

@@ -11,6 +11,7 @@ set cd_sounds=%cd%\Sounds
 set cd_stories=%cd%\Stories
 set cd_stories_maps=%cd%\Stories\Maps
 set cd_systems=%cd%\Systems
+set cd_systems_debug=%cd%\Systems\Debug
 set cd_systems_display=%cd%\Systems\Display
 set cd_systems_savesys=%cd%\Systems\SaveSys
 

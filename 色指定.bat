@@ -1,61 +1,62 @@
 @echo off
+chcp 65001 >nul
 for /f %%i in ('cmd /k prompt $e^<nul') do set ESC=%%i
 
-echo --- ƒXƒ^ƒCƒ‹ ---
-echo %ESC%[0mƒŠƒZƒbƒg
-echo %ESC%[1m‘¾Žš%ESC%[0m
-echo %ESC%[4mƒAƒ“ƒ_[ƒ‰ƒCƒ“
+echo --- ã‚¹ã‚¿ã‚¤ãƒ« ---
+echo %ESC%[0mãƒªã‚»ãƒƒãƒˆ
+echo %ESC%[1må¤ªå­—%ESC%[0m
+echo %ESC%[4mã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ã‚¤ãƒ³
 echo.
-echo %ESC%[7m”½“]
+echo %ESC%[7måè»¢
 echo %ESC%[0m
 echo.
-echo --- •¶Žš‚ÌF ---
-echo %ESC%[30m•F
-echo %ESC%[31mÔF
-echo %ESC%[32m—ÎF
-echo %ESC%[33m‰©F
-echo %ESC%[34mÂF
-echo %ESC%[35mƒƒKƒ“ƒ^
-echo %ESC%[36mƒVƒAƒ“
-echo %ESC%[37m”’F
+echo --- æ–‡å­—ã®è‰² ---
+echo %ESC%[30mé»’è‰²
+echo %ESC%[31mèµ¤è‰²
+echo %ESC%[32mç·‘è‰²
+echo %ESC%[33mé»„è‰²
+echo %ESC%[34mé’è‰²
+echo %ESC%[35mãƒ¡ã‚¬ãƒ³ã‚¿
+echo %ESC%[36mã‚·ã‚¢ãƒ³
+echo %ESC%[37mç™½è‰²
 echo %ESC%[0m
 echo.
-echo --- ”wŒiF ---
-echo %ESC%[40m•F%ESC%[0m
-echo %ESC%[41mÔF%ESC%[0m
-echo %ESC%[42m—ÎF%ESC%[0m
-echo %ESC%[43m‰©F%ESC%[0m
-echo %ESC%[44mÂF%ESC%[0m
-echo %ESC%[45mƒƒKƒ“ƒ^%ESC%[0m
-echo %ESC%[46mƒVƒAƒ“%ESC%[0m
-echo %ESC%[47m”’F%ESC%[0m
+echo --- èƒŒæ™¯è‰² ---
+echo %ESC%[40mé»’è‰²%ESC%[0m
+echo %ESC%[41mèµ¤è‰²%ESC%[0m
+echo %ESC%[42mç·‘è‰²%ESC%[0m
+echo %ESC%[43mé»„è‰²%ESC%[0m
+echo %ESC%[44mé’è‰²%ESC%[0m
+echo %ESC%[45mãƒ¡ã‚¬ãƒ³ã‚¿%ESC%[0m
+echo %ESC%[46mã‚·ã‚¢ãƒ³%ESC%[0m
+echo %ESC%[47mç™½è‰²%ESC%[0m
 echo.
-echo --- •¶Žš‚ÌFi‹­’²j---
-echo %ESC%[90m•F
-echo %ESC%[91mÔF
-echo %ESC%[92m—ÎF
-echo %ESC%[93m‰©F
-echo %ESC%[94mÂF
-echo %ESC%[95mƒƒKƒ“ƒ^
-echo %ESC%[96mƒVƒAƒ“
-echo %ESC%[97m”’F
+echo --- æ–‡å­—ã®è‰²ï¼ˆå¼·èª¿ï¼‰---
+echo %ESC%[90mé»’è‰²
+echo %ESC%[91mèµ¤è‰²
+echo %ESC%[92mç·‘è‰²
+echo %ESC%[93mé»„è‰²
+echo %ESC%[94mé’è‰²
+echo %ESC%[95mãƒ¡ã‚¬ãƒ³ã‚¿
+echo %ESC%[96mã‚·ã‚¢ãƒ³
+echo %ESC%[97mç™½è‰²
 echo %ESC%[0m
 echo.
-echo --- ”wŒiFi‹­’²j---
-echo %ESC%[100m•F%ESC%[0m
-echo %ESC%[101mÔF%ESC%[0m
-echo %ESC%[102m—ÎF%ESC%[0m
-echo %ESC%[103m‰©F %ESC%[0m
-echo %ESC%[104mÂF%ESC%[0m
-echo %ESC%[105mƒƒKƒ“ƒ^%ESC%[0m
-echo %ESC%[106mƒVƒAƒ“%ESC%[0m
-echo %ESC%[107m”’F%ESC%[0m
+echo --- èƒŒæ™¯è‰²ï¼ˆå¼·èª¿ï¼‰---
+echo %ESC%[100mé»’è‰²%ESC%[0m
+echo %ESC%[101mèµ¤è‰²%ESC%[0m
+echo %ESC%[102mç·‘è‰²%ESC%[0m
+echo %ESC%[103mé»„è‰² %ESC%[0m
+echo %ESC%[104mé’è‰²%ESC%[0m
+echo %ESC%[105mãƒ¡ã‚¬ãƒ³ã‚¿%ESC%[0m
+echo %ESC%[106mã‚·ã‚¢ãƒ³%ESC%[0m
+echo %ESC%[107mç™½è‰²%ESC%[0m
 echo.
-echo --- ƒ~ƒbƒNƒX ---
-echo %ESC%[31;44m•¶Žš‚ÌF Ô ”wŒiF ÂF%ESC%[0m
+echo --- ãƒŸãƒƒã‚¯ã‚¹ ---
+echo %ESC%[31;44mæ–‡å­—ã®è‰² èµ¤ èƒŒæ™¯è‰² é’è‰²%ESC%[0m
 echo.
-echo --- —á ---
-echo %ESC%[34mÂF %ESC%[32m—ÎF %ESC%[33m ‰©F%ESC%[0mB%ESC%[33m‰©F%ESC%[0m‚Í‹­’²‚Ì%ESC%[93m‰©F%ESC%[0m‚É‚µ‚ÄA‚³‚ç‚É”wŒiF‚ð%ESC%[93;101m‹­’²‚ÌÔ%ESC%[0m‚É‚µ‚ÄA%ESC%[4;93;101mƒAƒ“ƒ_[ƒ‰ƒCƒ“%ESC%[0m‚ð•t‚¯‚éB
+echo --- ä¾‹ ---
+echo %ESC%[34mé’è‰² %ESC%[32mç·‘è‰² %ESC%[33m é»„è‰²%ESC%[0mã€‚%ESC%[33mé»„è‰²%ESC%[0mã¯å¼·èª¿ã®%ESC%[93mé»„è‰²%ESC%[0mã«ã—ã¦ã€ã•ã‚‰ã«èƒŒæ™¯è‰²ã‚’%ESC%[93;101må¼·èª¿ã®èµ¤%ESC%[0mã«ã—ã¦ã€%ESC%[4;93;101mã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ã‚¤ãƒ³%ESC%[0mã‚’ä»˜ã‘ã‚‹ã€‚
 echo.
 echo.
 echo.
