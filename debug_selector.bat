@@ -8,7 +8,7 @@ for /f %%a in ('cmd /k prompt $e^<nul') do (set "esc=%%a")
 
 echo Environment variables set.
 echo Starting SaveDataSelector with debug mode...
-set RPG_DEBUG_STATE=1
+set DEBUG_STATE=1
 
 echo Calling SaveDataSelector.bat...
 call "e:\RPGGAME\Systems\SaveSys\SaveDataSelector.bat" CONTINUE

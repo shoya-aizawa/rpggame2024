@@ -1,8 +1,8 @@
 title MainMenu
 
 :: デバッグ状態継承
-if defined RPG_DEBUG_STATE (
-    set debug_mainmenu=%RPG_DEBUG_STATE%
+if defined DEBUG_STATE (
+    set debug_mainmenu=%DEBUG_STATE%
 ) else (
     set debug_mainmenu=0
 )
@@ -522,7 +522,7 @@ set color_normal=0
     set current_time=%time:~0,8%
     echo %esc%[2;1H%esc%[K%esc%[93m [%current_time%] Menu: %current_selected_menu%/%max_menu_items% LastKey: %key% %esc%[0m
     echo %esc%[3;1H%esc%[K%esc%[96m Available: %max_menu_items% KeyCount: %key_log_count% %esc%[0m
-    echo %esc%[4;1H%esc%[K%esc%[97m Sequence: [%hidden_sequence%] InheritState: %RPG_DEBUG_STATE% %esc%[0m
+    echo %esc%[4;1H%esc%[K%esc%[97m Sequence: [%hidden_sequence%] InheritState: %DEBUG_STATE% %esc%[0m
 
     :: ステータス行の更新
     set status_line=
@@ -579,7 +579,7 @@ set color_normal=0
         echo %esc%[1;1H%esc%[K
 
         :: 環境変数に状態を保存
-        set RPG_DEBUG_STATE=1
+        set DEBUG_STATE=1
         set RPG_DEBUG_KEYLOG_COUNT=%key_log_count%
         set RPG_DEBUG_LOG1=%key_log_line_1%
         set RPG_DEBUG_LOG2=%key_log_line_2%
@@ -597,7 +597,7 @@ set color_normal=0
         echo %esc%[1;1H%esc%[K
 
         :: 環境変数をクリア
-        set RPG_DEBUG_STATE=0
+        set DEBUG_STATE=0
         set RPG_DEBUG_KEYLOG_COUNT=0
         set RPG_DEBUG_LOG1=
         set RPG_DEBUG_LOG2=
@@ -624,7 +624,7 @@ set color_normal=0
     :: 初回表示時の固定部分のみ描画
     echo %esc%[2;1H%esc%[93m [%current_time%] Menu: %current_selected_menu%/%max_menu_items% LastKey: %key% %esc%[0m
     echo %esc%[3;1H%esc%[96m Available: %max_menu_items% KeyCount: %key_log_count% %esc%[0m
-    echo %esc%[4;1H%esc%[97m Sequence: [%hidden_sequence%] InheritState: %RPG_DEBUG_STATE% %esc%[0m
+    echo %esc%[4;1H%esc%[97m Sequence: [%hidden_sequence%] InheritState: %DEBUG_STATE% %esc%[0m
 
     :: メニュー項目の動的状態表示
     set status_line=
@@ -666,7 +666,7 @@ set color_normal=0
     set key_log_line_5=
 
     :: 一時ファイルをクリア
-    if exist %cd_systems_debug%\rpg_debug_state.dat del %cd_systems_debug%\rpg_debug_state.dat >nul 2>&1
+    if exist %cd_systems_debug%\DEBUG_STATE.dat del %cd_systems_debug%\DEBUG_STATE.dat >nul 2>&1
     exit /b 0
 
 
@@ -715,7 +715,7 @@ set color_normal=0
     set key_log_line_4=%key_log_line_3%
     set key_log_line_3=%key_log_line_2%
     set key_log_line_2=%key_log_line_1%
-    set key_log_line_1=[%current_time%] #%key_log_count% %key_name% -> Menu:%current_selected_menu%
+    set key_log_line_1=[%current_time%] #%key_log_count% %key_name% - Menu:%current_selected_menu%
 
     :: 隠しコマンド判定（4文字コード）
     if "!hidden_sequence!"=="pick" (

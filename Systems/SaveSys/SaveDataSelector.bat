@@ -3,7 +3,7 @@
 :: RPGゲームのセーブデータ選択画面
 ::===============================================================
 
-
+title SveDataSelect - %1
 
 :: 引数判別・初期化
 set "selector_mode=%1"
@@ -13,8 +13,8 @@ if "%selector_mode%"=="" set "selector_mode=CONTINUE"
 set sds_retcode=
 
 :: デバッグ状態継承
-if defined RPG_DEBUG_STATE (
-    set debug_selector=%RPG_DEBUG_STATE%
+if defined DEBUG_STATE (
+    set debug_selector=%DEBUG_STATE%
 ) else (
     set debug_selector=0
 )
@@ -346,7 +346,7 @@ exit /b 2000
     set current_time=%time:~0,8%
     echo %esc%[2;1H%esc%[K%esc%[93m [%current_time%] Slot: %current_selected_slot%/%max_total_slots% Mode: %selector_mode% %esc%[0m
     echo %esc%[3;1H%esc%[K%esc%[96m Available: %max_available_slots% KeyCount: %key_log_count% %esc%[0m
-    echo %esc%[4;1H%esc%[K%esc%[97m Sequence: [%hidden_sequence%] InheritState: %RPG_DEBUG_STATE% %esc%[0m
+    echo %esc%[4;1H%esc%[K%esc%[97m Sequence: [%hidden_sequence%] InheritState: %DEBUG_STATE% %esc%[0m
     
     :: ステータス行の更新
     set status_line=
@@ -907,7 +907,7 @@ exit /b 2000
         exit /b 0
     )
     
-    exit /b 2070
+    exit /b 2070新しい
 
 :Confirm_LoadGame
     echo %esc%[20;92H%esc%[93m このデータをロードしますか？ (F=はい/Q=いいえ) %esc%[0m
@@ -959,7 +959,7 @@ exit /b 2000
     set dialog_type=%1
     if "%dialog_type%"=="" set dialog_type=UNKNOWN
     
-    choice /c ABCDEFGHIJKLMNOPQRSTUVWXYZ /n
+    choice /c ABCDEFGHIJKLMNOPQRSTUVWXYZ /n >nul
     set choice=%errorlevel%
     
     :: デバッグモード時はキーログに記録
@@ -1055,12 +1055,12 @@ exit /b 2000
 
     if %debug_selector%==0 (
         set debug_selector=1
-        echo %esc%[1;1H%esc%[43;30m [DEBUG] FALSE -> TRUE %esc%[0m
+        echo %esc%[1;1H%esc%[43;30m [DEBUG] FALSE -^> TRUE %esc%[0m
         timeout /t 1 >nul
         echo %esc%[1;1H%esc%[K
 
         :: 環境変数に状態を保存
-        set RPG_DEBUG_STATE=1
+        set DEBUG_STATE=1
         set RPG_DEBUG_KEYLOG_COUNT=%key_log_count%
         set RPG_DEBUG_LOG1=%key_log_line_1%
         set RPG_DEBUG_LOG2=%key_log_line_2%
@@ -1071,12 +1071,12 @@ exit /b 2000
         call :Display_Debug_Info
     ) else (
         set debug_selector=0
-        echo %esc%[1;1H%esc%[42;30m [DEBUG] TRUE -> FALSE %esc%[0m
+        echo %esc%[1;1H%esc%[42;30m [DEBUG] TRUE -^> FALSE %esc%[0m
         timeout /t 1 >nul
         echo %esc%[1;1H%esc%[K
 
         :: 環境変数をクリア
-        set RPG_DEBUG_STATE=0
+        set DEBUG_STATE=0
         set RPG_DEBUG_KEYLOG_COUNT=0
         set RPG_DEBUG_LOG1=
         set RPG_DEBUG_LOG2=
@@ -1164,7 +1164,7 @@ exit /b 2000
     if %input_key%==26 set key_name=Z(Hidden)
     
     :: ログエントリの作成（MainMenuModule.batと統一形式）
-    set log_entry=[%current_time%] #%key_log_count% %key_name% -> Slot:%current_selected_slot%
+    set log_entry=[%current_time%] #%key_log_count% %key_name% - Slot:%current_selected_slot%
     
     :: ログの循環更新
     set key_log_line_5=%key_log_line_4%
@@ -1226,7 +1226,7 @@ exit /b 2000
     if "%input_key%"=="26" set key_name=Z(Hidden)
     
     :: ログエントリの作成（MainMenuModule.batと統一形式）
-    set log_entry=[%current_time%] #%key_log_count% %key_name% -> Dialog:%dialog_action%
+    set log_entry=[%current_time%] #%key_log_count% %key_name% - Dialog:%dialog_action%
     
     :: ログの循環更新
     set key_log_line_5=%key_log_line_4%
